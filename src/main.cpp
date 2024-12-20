@@ -268,7 +268,7 @@ void invertCanvas() {
 // Функция для отрисовки битмапа в HTML
 String drawBitmapHTML() {
     String html = "<button id=\"download\" style=\"background-color: #700ea9; color: #fff; font-size: 16px; border: none; border-radius: 1rem; padding: 0.5rem 1rem; margin-top: 1.5rem; margin-bottom: 1.5rem;\">Скачать изображение</button>";
-    html += "<canvas id='canvas' style='border-radius: 1rem; border: 2px solid #700ea9; box-shadow: 4px 3px 11px 0px #700ea963' width='" + String(SCREEN_WIDTH) + "' height='" + String(SCREEN_HEIGHT) + "'></canvas>";
+    html += "<canvas id='canvas' style='border-radius: 1rem; border: 2px solid #700ea9; box-shadow: 4px 3px 11px 0px #700ea963; padding: 1rem' width='" + String(SCREEN_WIDTH) + "' height='" + String(SCREEN_HEIGHT) + "'></canvas>";
     html += "<script>";
     html += "const canvas = document.getElementById('canvas');";
     html += "const ctx = canvas.getContext('2d');";

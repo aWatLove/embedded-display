@@ -267,8 +267,8 @@ void invertCanvas() {
 
 // Функция для отрисовки битмапа в HTML
 String drawBitmapHTML() {
-    String html = "<canvas id='canvas' width='" + String(SCREEN_WIDTH) + "' height='" + String(SCREEN_HEIGHT) + "'></canvas>";
-    html += "<button id=\"download\" style=\"background-color: #700ea9; color: #fff; font-size: 16px; font-family:monospace; border: none; border-radius: 1rem; padding: 0.5rem 1rem; margin-top: 1.5rem; margin-bottom: 1.5rem;\">Скачать изображение</button>";
+    String html = "<button id=\"download\" style=\"background-color: #700ea9; color: #fff; font-size: 16px; border: none; border-radius: 1rem; padding: 0.5rem 1rem; margin-top: 1.5rem; margin-bottom: 1.5rem;\">Скачать изображение</button>";
+    html += "<canvas id='canvas' style='border-radius: 1rem; border: 2px solid #700ea9; box-shadow: 4px 3px 11px 0px #700ea963' width='" + String(SCREEN_WIDTH) + "' height='" + String(SCREEN_HEIGHT) + "'></canvas>";
     html += "<script>";
     html += "const canvas = document.getElementById('canvas');";
     html += "const ctx = canvas.getContext('2d');";
@@ -474,10 +474,8 @@ void setup() {
     server.on("/", HTTP_GET, [](AsyncWebServerRequest* request) {
         String html = "<!DOCTYPE html><html><body><div style=\"padding-left: 5rem;\">";
         html += "<h1 style=\"font-family: monospace; font-size: 33px; margin-bottom: 1rem;\">ESP32 Bitmap Viewer</h1>";
-        html += "<p style=\"font-family: monospace; font-size: 20px; margin-bottom: 2rem;\">Вы можете увидеть своё творение!🎉</p>";
-        html += "<div style=\"width: 200px; height: 200px; border-radius: 1rem; border: 2px solid #700ea9; box-shadow: 4px 3px 11px 0px #700ea963\">";
+        html += "<p style=\"font-size: 20px; margin-bottom: 2rem;\">Вы можете увидеть своё творение!🎉</p>";
         html += drawBitmapHTML();
-        html += "</div>";
         // html += "<br><a href='/download'>Download Bitmap</a>";
         html += "</div></body></html>";
         request->send(200, "text/html", html);

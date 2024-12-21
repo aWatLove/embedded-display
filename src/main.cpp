@@ -474,10 +474,11 @@ void setup() {
     server.on("/", HTTP_GET, [](AsyncWebServerRequest* request) {
         String html = "<!DOCTYPE html><html><body><div style=\"padding-left: 5rem;\">";
         html += "<h1 style=\"font-family: monospace; font-size: 33px; margin-bottom: 1rem;\">ESP32 Bitmap Viewer</h1>";
-        html += "<p style=\"font-family: monospace; font-size: 20px; margin-bottom: 2rem;\">You can see your creation!🎉</p>";
+        html += "<p style=\"font-family: monospace; font-size: 20px; margin-bottom: 2rem;\">You can see your creation!</p>";
+        html += "<div style='display: flex; flex-flow: column'>"
         html += drawBitmapHTML();
         // html += "<br><a href='/download'>Download Bitmap</a>";
-        html += "</div></body></html>";
+        html += "</div></div></body></html>";
         request->send(200, "text/html", html);
     });
 
